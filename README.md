@@ -1,8 +1,8 @@
 # 学习记录
 
-> 仅用作记录个人学习课程，课程记录如下
+> 仅用作记录个人学习课程，课程介绍如下
 
-<img src="https://p.ipic.vip/cq125y.png" style="zoom:100%;" />
+![](https://p.ipic.vip/yrr3fk.png)
 
 ## 1、**CS 188** | Introduction to Artificial Intelligence
 
