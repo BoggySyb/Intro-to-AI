@@ -4,7 +4,7 @@
 
 ![](https://p.ipic.vip/yrr3fk.png)
 
-## 1、UC Berkeley **CS 188** | Introduction to Artificial Intelligence
+## UC Berkeley **CS 188** | Introduction to Artificial Intelligence
 
 > 学习时间：2023/09 - 2023/10 
 
