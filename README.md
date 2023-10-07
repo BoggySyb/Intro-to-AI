@@ -14,8 +14,8 @@
 
 #### 项目介绍：
 
-- p1-search：实现DFS、BFS、UCS、A*等搜索算法；启发式函数(Heuristic)优化，实现基础吃豆人自动化
-- p2-multiagent：
-- p3-reinforcement
-- p4-ghostbusters
-- p5-machinelearning
+- p1-search: 实现DFS、BFS、UCS、A*等搜索算法；启发式函数(Heuristic)优化，实现基础吃豆人自动化
+- p2-multiagent: 
+- p3-reinforcement:
+- p4-ghostbusters: Exact Inference, Approximate Inference
+- p5-machinelearning: 
