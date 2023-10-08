@@ -6,11 +6,11 @@
 
 ## UC Berkeley **CS 188** | Introduction to Artificial Intelligence
 
-> 学习时间：2023/09 - 2023/10                                                                                                                     [课程链接](https://inst.eecs.berkeley.edu/~cs188/fa18/)
+> 学习时间：2023/09 - 2023/10                                                                                                                   
 
 #### 课程内容：
 
-​	人工智能导论。主要介绍智能系统设计的基本思想和技术，统计和决策理论建模方法相关的内容。
+​	人工智能导论。主要介绍智能系统设计的基本思想和技术，统计和决策理论建模方法相关的内容。 [课程链接](https://inst.eecs.berkeley.edu/~cs188/fa18/)
 
 #### 项目介绍：
 
