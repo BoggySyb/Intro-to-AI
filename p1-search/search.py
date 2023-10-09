@@ -88,51 +88,59 @@ def depthFirstSearch(problem):
     """
     "*** YOUR CODE HERE ***"
     closed = set()
-    stk = util.Stack()
-    stk.push((problem.getStartState(), []))
+    fringe = util.Stack()
+    fringe.push((problem.getStartState(), []))
 
-    while not stk.isEmpty():
-        p, path = stk.pop()
+    while not fringe.isEmpty():
+        p, path = fringe.pop()
         if problem.isGoalState(p):
             return path
         if p not in closed:
             closed.add(p)
             for nextP, w, cost in problem.getSuccessors(p):
-                stk.push((nextP, path + [w]))
-    util.raiseNotDefined()
+                fringe.push((nextP, path + [w]))
+    # util.raiseNotDefined()
 
 def breadthFirstSearch(problem):
     """Search the shallowest nodes in the search tree first."""
     "*** YOUR CODE HERE ***"
     closed = set()
-    q = util.Queue()
-    q.push((problem.getStartState(), []))
+    fringe = util.Queue()
+    fringe.push((problem.getStartState(), []))
 
-    while not q.isEmpty():
-        p, path = q.pop()
+    while not fringe.isEmpty():
+        p, path = fringe.pop()
         if problem.isGoalState(p):
             return path
         if p not in closed:
             closed.add(p)
             for nextP, w, cost in problem.getSuccessors(p):
-                q.push((nextP, path + [w]))
-    util.raiseNotDefined()
+                fringe.push((nextP, path + [w]))
+    # util.raiseNotDefined()
 
 def uniformCostSearch(problem):
     """Search the node of least total cost first."""
+    # closed 记录状态是否被访问
     closed = set()
-    q = util.PriorityQueue()
-    q.push((problem.getStartState(), []), 0)
 
-    while not q.isEmpty():
-        p, path = q.pop()
+    # costs 记录状态总成本
+    costs = util.Counter()
+    costs[problem.getStartState()] = 0
+
+    # fringe 记录边缘路径
+    fringe = util.PriorityQueue()
+    fringe.push((problem.getStartState(), []), 0)
+
+    while not fringe.isEmpty():
+        p, path = fringe.pop()
         if problem.isGoalState(p):
             return path
         if p not in closed:
             closed.add(p)
             for nextP, w, cost in problem.getSuccessors(p):
-                q.push((nextP, path + [w]), cost)
-    util.raiseNotDefined()
+                costs[nextP] = costs[p] + cost
+                fringe.push((nextP, path + [w]), costs[nextP])
+    # util.raiseNotDefined()
 
 def nullHeuristic(state, problem=None):
     """
@@ -155,7 +163,7 @@ def aStarSearch(problem, heuristic=nullHeuristic):
             closed.add(p)
             for nextP, w, cost in problem.getSuccessors(p):
                 q.push((nextP, path + [w]), cost + heuristic(nextP, problem))
-    util.raiseNotDefined()
+    # util.raiseNotDefined()
 
 
 # Abbreviations
