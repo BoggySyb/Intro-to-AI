@@ -42,18 +42,18 @@
 
      ​	指在概率图模型（如贝叶斯网络或马尔可夫随机场）中进行精确概率计算的过程。这种推断方法旨在精确地计算给定一组观测数据条件下的概率分布或概率查询。
 
-     <img src="https://p.ipic.vip/v9jpme.png" style="zoom:50%;" />
+     <img src="https://p.ipic.vip/v9jpme.png" style="zoom:40%;" />
 
    - Approximate Inference 近似推断
 
      ​	项目采用粒子滤波(Particle Filtering)做近似推断，通过一组随机粒子来估计系统状态的后验分布。
 
-     <img src="https://p.ipic.vip/jx33yn.png" style="zoom:50%;" />
+     <img src="https://p.ipic.vip/jx33yn.png" style="zoom:40%;" />
 
    - DBNs 动态贝叶斯网络
 
      ​	是一种用于建模时间序列数据和动态系统的概率图模型，它是贝叶斯网络的扩展，用于表示和推断关于随时间变化的随机变量之间关系的概率模型。
 
-     <img src="https://p.ipic.vip/kwnuo4.png" style="zoom:50%;" />
+     <img src="https://p.ipic.vip/kwnuo4.png" style="zoom:10%;" />
 
 - p5-machinelearning:   在此项目中，您将构建一个神经网络来对数字图片进行分类。
