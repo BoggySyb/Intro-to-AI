@@ -14,13 +14,29 @@
 
 #### 项目介绍：
 
-- p1-search: 实现DFS、BFS、UCS、A*等搜索算法；启发式函数(Heuristic)优化，实现基础吃豆人自动化
+- p1-search:   在本项目中，您将实现通用搜索算法并将其应用于 Pacman 场景，让 Pacman 在迷宫世界中找到到达特定位置的路径以收集食物。(q3, 4, 6, 7 unfinished)
 
-- p2-multiagent: 
+   + Depth First Search 深度优先搜索
 
-- p3-reinforcement:
+     <img src="https://p.ipic.vip/be9s2a.png" style="zoom:50%;" />
 
-- p4-ghostbusters:  在本项目中，设计使用传感器来定位和吃掉看不见的幽灵的吃豆人(HMM隐马尔可夫模型)
+   + Breadth First Search 宽度优先搜索
+
+     <img src="https://p.ipic.vip/vbrlr9.png" style="zoom:50%;" />
+
+   + A* Search A*搜索
+
+     <img src="https://p.ipic.vip/44p63b.png" style="zoom:50%;" />
+
+   + Heuristic 启发式方法
+
+     
+
+- p2-multiagent:   在本项目中，您将实现极小极大和期望极大搜索算法，以及设计评估函数，来为游戏设计更聪明的幽灵与 Pacman。(debugging)
+
+- p3-reinforcement:  在本项目中，您将实现价值迭代和 Q 学习。首先在 Gridworld 上测试您的特工，然后将它们应用于模拟机器人控制器（Crawler）和 Pacman。(q1, 2, 3, 4, 5, 8 unfinished)
+
+- p4-ghostbusters:  在本项目中，您将设计使用传感器来定位和吃掉看不见的幽灵的 Pacman (HMM隐马尔可夫模型)
 
    - Exact Inference 精确推断
 
@@ -40,4 +56,4 @@
 
      <img src="https://p.ipic.vip/kwnuo4.png" style="zoom:50%;" />
 
-- p5-machinelearning: 
+- p5-machinelearning:   在此项目中，您将构建一个神经网络来对数字图片进行分类。
