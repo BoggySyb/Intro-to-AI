@@ -14,7 +14,7 @@
 
 #### 项目介绍：
 
-- p1-search:   在本项目中，您将实现通用搜索算法并将其应用于 Pacman 场景，让 Pacman 在迷宫世界中找到到达特定位置的路径以收集食物。(q4, 6, 7 unfinished)
+- p1-search:   在本项目中，您将实现通用搜索算法并将其应用于 Pacman 场景，让 Pacman 在迷宫世界中找到到达特定位置的路径以收集食物。（q7  2/4）
 
    + Depth First Search 深度优先搜索
 
@@ -30,11 +30,11 @@
 
      <img src="https://p.ipic.vip/29xb2o.png" style="zoom:50%;" />
 
-   + A* Search A*搜索
+   + A* Search & Heuristic 启发式方法
 
-     <img src="https://p.ipic.vip/44p63b.png" style="max-width:50%;" />
+     ​	A*搜索算法是一种常用于寻找最短路径或最优解的启发式搜索算法，路径的实际成本（已经花费的代价）和预估的剩余成本（从当前节点到目标节点的估计代价)。
 
-   + Heuristic 启发式方法
+     <img src="https://p.ipic.vip/17duvv.png" style="zoom:75%;" />角落启发
 
      
 

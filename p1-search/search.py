@@ -123,7 +123,7 @@ def uniformCostSearch(problem):
     # closed 记录状态是否被访问
     closed = set()
 
-    # costs 记录状态总成本
+    # costs 记录状态成本
     costs = util.Counter()
     costs[problem.getStartState()] = 0
 
@@ -151,18 +151,26 @@ def nullHeuristic(state, problem=None):
 
 def aStarSearch(problem, heuristic=nullHeuristic):
     """Search the node that has the lowest combined cost and heuristic first."""
+    # closed 记录访问过的状态
     closed = set()
-    q = util.PriorityQueue()
-    q.push((problem.getStartState(), []), 0)
 
-    while not q.isEmpty():
-        p, path = q.pop()
+    # costs 记录状态成本
+    costs = util.Counter()
+    costs[problem.getStartState()] = 0
+
+    # 搜索树边缘状态
+    fringe = util.PriorityQueue()
+    fringe.push((problem.getStartState(), []), 0)
+
+    while not fringe.isEmpty():
+        p, path = fringe.pop()
         if problem.isGoalState(p):
             return path
         if p not in closed:
             closed.add(p)
             for nextP, w, cost in problem.getSuccessors(p):
-                q.push((nextP, path + [w]), cost + heuristic(nextP, problem))
+                costs[nextP] = costs[p] + cost
+                fringe.push((nextP, path + [w]), costs[nextP] + heuristic(nextP, problem))
     # util.raiseNotDefined()
 
 

@@ -369,15 +369,21 @@ def cornersHeuristic(state, problem):
 
     "*** YOUR CODE HERE ***"
     point, is_corners = state
-    x, y = point
-    near_len = 0
-    for corner in corners:
-        idx = problem.corners.index(corner)
-        if not is_corners[idx]:
-            x1, y1 = corner
-            near_len += abs(x1-x) + abs(y1-y)
+    is_corners = list(is_corners)
+    p, t, res = point, len(is_corners) - sum(is_corners), 0
 
-    return near_len # Default to trivial solution
+    # 记录从当前点依次到每个未去角落的曼哈顿距离
+    for _ in range(t):
+        near_len, near_idx = 999999, 0
+        for corner in corners:
+            idx = problem.corners.index(corner)
+            if not is_corners[idx] and near_len > util.manhattanDistance(corner, p):
+                near_len = util.manhattanDistance(corner, p)
+                near_idx = idx
+        is_corners[near_idx] = True
+        p = corners[near_idx]
+        res += near_len
+    return res
 
 class AStarCornersAgent(SearchAgent):
     "A SearchAgent for FoodSearchProblem using A* and your foodHeuristic"
@@ -470,17 +476,32 @@ def foodHeuristic(state, problem):
     problem.heuristicInfo['wallCount']
     """
     walls = problem.walls
-    position, foodGrid = state
+    pos, foodGrid = state
     "*** YOUR CODE HERE ***"
-    x, y = position
-
-    res = 0
+    numFoods = 0
+    foodsDs, farDs = [pos for _ in range(4)], [0 for _ in range(4)]
     for i in range(foodGrid.width):
         for j in range(foodGrid.height):
             if foodGrid[i][j]:
-                res += 1
+                numFoods += 1
+                dist = util.manhattanDistance(pos, (i, j))
+                if i >= pos[0] and j > pos[1] and farDs[0] < dist:
+                    farDs[0], foodsDs[0] = dist, (i, j)
+                elif i > pos[0] and j <= pos[1] and farDs[1] < dist:
+                    farDs[1], foodsDs[1] = dist, (i, j)
+                elif i <= pos[0] and j < pos[1] and farDs[2] < dist:
+                    farDs[2], foodsDs[2] = dist, (i, j)
+                elif i < pos[0] and j >= pos[1] and farDs[3] < dist:
+                    farDs[3], foodsDs[3] = dist, (i, j)
+    return numFoods
 
-    return res
+    Id1 = Id2 = farDs.index(min(farDs))
+    sum_mand1 = sum_mand2 = min(farDs)
+    for _ in range(3):
+        sum_mand1 += util.manhattanDistance(foodsDs[Id1], foodsDs[(Id1 + 1)%4])
+        sum_mand2 += util.manhattanDistance(foodsDs[Id2], foodsDs[(Id2 + 3)%4])
+        Id1, Id2 = (Id1 + 1)%4, (Id2 + 3)%4
+    return min(sum_mand1, sum_mand2)
 
 class ClosestDotSearchAgent(SearchAgent):
     "Search for all food using a sequence of searches"
