@@ -38,7 +38,31 @@
 
      
 
-- p2-multiagent:   在本项目中，您将实现极小极大和期望极大搜索算法，以及设计评估函数，来为游戏设计更聪明的幽灵与 Pacman。(debugging)
+- p2-multiagent:   在本项目中，您将实现极小极大和期望极大搜索算法，以及设计评估函数，来为游戏设计更聪明的幽灵与 Pacman。(q4, 5 debugging)
+
+   + Reflex Agent  3/4
+
+     <img src="https://p.ipic.vip/3cv16i.png" style="zoom:67%;" />
+
+   + Minimax 最小最大算法
+
+     ​	Minimax 算法的主要目标是帮助一个玩家找到在对手采取最优策略的情况下，自己能够获得的最大利益，或者说最小化可能的最大损失。
+
+     <img src="https://p.ipic.vip/vm1xi8.png" style="zoom:75%;" />
+
+   + Alpha-Beta Pruning 
+
+     ​	Alpha-Beta剪枝是一种优化Minimax算法的技术，用于在博弈树搜索中减少计算开销。Alpha和Beta分别是两个参数，它们用于跟踪在搜索过程中找到的最佳值。Alpha表示Max层（当前玩家）已经找到的最佳值，而Beta表示Min层（对手）已经找到的最佳值。
+
+     <img src="https://p.ipic.vip/seh552.png" style="zoom:75%;" />
+
+   + Expectimax
+
+   + 
+
+     
+
+     
 
 - p3-reinforcement:  在本项目中，您将实现价值迭代和 Q 学习。首先在 Gridworld 上测试您的特工，然后将它们应用于模拟机器人控制器（Crawler）和 Pacman。(q1, 2, 3, 4, 5, 8 unfinished)
 
