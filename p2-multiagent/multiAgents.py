@@ -237,7 +237,7 @@ class ExpectimaxAgent(MultiAgentSearchAgent):
     def expectimax(self, state, dep, agentId):
         if state.isWin() or state.isLose():
             return self.evaluationFunction(state)
-        if agentId == self.cnt:
+        if agentId == self.numAgents:
             if dep == self.depth:
                 return self.evaluationFunction(state)
             return self.expectimax(state, dep + 1, 0)
@@ -261,18 +261,18 @@ class ExpectimaxAgent(MultiAgentSearchAgent):
         legal moves.
         """
         "*** YOUR CODE HERE ***"
-        self.cnt = gameState.getNumAgents()
+        self.numAgents = gameState.getNumAgents()
 
         bestScore = -999999
         bestAction = None
         for action in gameState.getLegalActions(0):
             neState = gameState.generateSuccessor(0, action)
-            neScore = self.evaluationFunction(neState) if neState.isWin() or neState.isLose() else self.expectimax(neState, 0, 1)
+            neScore = self.evaluationFunction(neState) if neState.isWin() or neState.isLose() else self.expectimax(neState, 1, 1)
             if bestScore < neScore:
                 bestScore = neScore
                 bestAction = action
         return bestAction
-        util.raiseNotDefined()
+        # util.raiseNotDefined()
 
 def betterEvaluationFunction(currentGameState):
     """
@@ -282,7 +282,22 @@ def betterEvaluationFunction(currentGameState):
     DESCRIPTION: <write something here so we know what you did>
     """
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    curScore = currentGameState.getScore()
+    pacPos = currentGameState.getPacmanPosition()  # 坐标
+    foodPos = currentGameState.getFood()  # 矩阵
+    ghostPoses = currentGameState.getGhostStates()
+
+    nearD_ghost = 999999
+    for ghostP in ghostPoses:
+        nearD_ghost = min(nearD_ghost, util.manhattanDistance(pacPos, ghostP))
+
+    for i in range(foodPos.width):
+        for j in range(foodPos.height):
+            if foodPos[i][j] and util.manhattanDistance((i, j), pacPos):
+                curScore += 1
+    return curScore
+
+    # util.raiseNotDefined()
 
 # Abbreviation
 better = betterEvaluationFunction

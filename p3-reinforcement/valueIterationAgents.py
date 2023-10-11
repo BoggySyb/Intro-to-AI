@@ -63,12 +63,12 @@ class ValueIterationAgent(ValueEstimationAgent):
         # Write value iteration code here
         "*** YOUR CODE HERE ***"
         states = self.mdp.getStates()
-        for i in range(self.iterations):
+        for _ in range(self.iterations):
             newValues = util.Counter()
             for state in states:
                 if self.mdp.isTerminal(state):
                     continue
-                newValues[state] = self.computeActionFromValues(state)
+                newValues[state] = self.getQValue(state, self.getAction(state))
             self.values = newValues
 
 
@@ -86,10 +86,10 @@ class ValueIterationAgent(ValueEstimationAgent):
         """
         "*** YOUR CODE HERE ***"
         sum = 0
-        for (nextP, prob) in self.mdp.getTransitionStatesAndProbs(state, action):
-            sum += prob * (self.mdp.getReward(state, action, nextP) + self.discount * self.values[nextP])
+        for nextP, prob in self.mdp.getTransitionStatesAndProbs(state, action):
+            sum += prob * (self.discount * self.getValue(nextP) + self.mdp.getReward(state, action, nextP))
         return sum
-        util.raiseNotDefined()
+        # util.raiseNotDefined()
 
     def computeActionFromValues(self, state):
         """
@@ -101,11 +101,13 @@ class ValueIterationAgent(ValueEstimationAgent):
           terminal state, you should return None.
         """
         "*** YOUR CODE HERE ***"
-        Vk = -999999
+        Vk, bestAction = -999999, None
         for action in self.mdp.getPossibleActions(state):
-            Vk = max(Vk, self.computeQValueFromValues(state, action))
-        return Vk
-        util.raiseNotDefined()
+            Nek = self.computeQValueFromValues(state, action)
+            if Vk < Nek:
+                Vk, bestAction = Nek, action
+        return bestAction
+        # util.raiseNotDefined()
 
     def getPolicy(self, state):
         return self.computeActionFromValues(state)
@@ -147,14 +149,11 @@ class AsynchronousValueIterationAgent(ValueIterationAgent):
     def runValueIteration(self):
         "*** YOUR CODE HERE ***"
         states = self.mdp.getStates()
-        j, statesNum = 0, len(states)
         for i in range(self.iterations):
-            state = states[j % statesNum]
+            state = states[i % len(states)]
             if self.mdp.isTerminal(state):
-                j += 1
-                state = states[j % statesNum]
-            self.values[state] = self.computeActionFromValues(state)
-            j += 1
+                continue
+            self.values[state] = self.getQValue(state, self.getAction(state))
 
 
 class PrioritizedSweepingValueIterationAgent(AsynchronousValueIterationAgent):
@@ -177,8 +176,9 @@ class PrioritizedSweepingValueIterationAgent(AsynchronousValueIterationAgent):
     def runValueIteration(self):
         "*** YOUR CODE HERE ***"
         states = self.mdp.getStates()
+
         # 求前状态 pre[state] = [st1, st2, ...]
-        preStates = {}
+        predecessors = {}
         for state in states:
             if self.mdp.isTerminal(state):
                 continue
@@ -186,24 +186,26 @@ class PrioritizedSweepingValueIterationAgent(AsynchronousValueIterationAgent):
             for act in actions:
                 neStates = self.mdp.getTransitionStatesAndProbs(state, act)
                 for neP, prob in neStates:
-                    if neP in preStates:
-                        preStates[neP].append(neP)
-                    else:
-                        preStates[neP] = [state]
+                    if neP not in predecessors:
+                        predecessors[neP] = set()
+                    predecessors[neP].add(state)
+
         # 优先队列依照绝对差值最大排序
         priQ = util.PriorityQueue()
         for state in states:
             if self.mdp.isTerminal(state):
                 continue
-            priQ.push(state, -abs(self.computeActionFromValues(state) - self.values[state]))
+            priQ.push(state, -abs(self.getQValue(state, self.getAction(state)) - self.getValue(state)))
 
         # 迭代 self.iterations 次
         for _ in range(self.iterations):
             if priQ.isEmpty():
                 break
             state = priQ.pop()
-            self.values[state] = self.computeActionFromValues(state)
-            for preState in preStates[state]:
-                diff = abs(self.computeActionFromValues(preState) - self.values[preState])
+            if self.mdp.isTerminal(state):
+                continue
+            self.values[state] = self.getQValue(state, self.getAction(state))
+            for preState in predecessors[state]:
+                diff = abs(self.getQValue(preState, self.getAction(preState)) - self.getValue(preState))
                 if diff > self.theta:
-                    priQ.push(preState, -diff)
+                    priQ.update(preState, -diff)

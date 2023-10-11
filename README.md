@@ -34,11 +34,11 @@
 
      ​	A*搜索算法是一种常用于寻找最短路径或最优解的启发式搜索算法，路径的实际成本（已经花费的代价）和预估的剩余成本（从当前节点到目标节点的估计代价)。
 
-     <img src="https://p.ipic.vip/17duvv.png" style="zoom:75%;" />角落启发
+     <img src="https://p.ipic.vip/17duvv.png" style="zoom:75%;" />
 
      
 
-- p2-multiagent:   在本项目中，您将实现极小极大和期望极大搜索算法，以及设计评估函数，来为游戏设计更聪明的幽灵与 Pacman。(q4, 5 debugging)
+- p2-multiagent:   在本项目中，您将实现极小极大和期望极大搜索算法，以及设计评估函数，来为游戏设计更聪明的幽灵与 Pacman。(q5  0/6)
 
    + Reflex Agent  3/4
 
@@ -58,13 +58,27 @@
 
    + Expectimax
 
-   + 
+     ​	Expectimax（期望极大算法）是一种用于解决概率性决策问题的算法，通常用于博弈、规划和其他与不确定性相关的问题。该算法的名称来自于"expectation"（期望）和"maximization"（极大化）两个词的组合，这反映了它的工作原理。
 
-     
+     <img src="https://p.ipic.vip/lkicoi.png" style="zoom:75%;" />
 
-     
+- p3-reinforcement:  在本项目中，您将实现价值迭代和 Q 学习。首先在 Gridworld 上测试您的特工，然后将它们应用于模拟机器人控制器（Crawler）和 Pacman。
 
-- p3-reinforcement:  在本项目中，您将实现价值迭代和 Q 学习。首先在 Gridworld 上测试您的特工，然后将它们应用于模拟机器人控制器（Crawler）和 Pacman。(q1, 2, 3, 4, 5, 8 unfinished)
+   + Value Iteration & Asynchronous Value Iteration  价值迭代
+
+     ​	Value Iteration 算法的主要目标是计算每个状态的价值函数，即从每个状态开始执行最佳策略所能获得的期望累积奖励。这个过程通常通过反复迭代来实现，直到价值函数收敛为止。
+
+     <img src="https://p.ipic.vip/j8lmtz.png" style="zoom:50%;" />
+
+     <img src="https://p.ipic.vip/73ed7n.png" style="zoom:50%;" />
+
+   + Q-Learning
+
+     <img src="https://p.ipic.vip/7v0hqy.png" style="zoom:30%;" />
+
+   + Approximate Q-Learning
+
+     <img src="https://p.ipic.vip/ongan5.png" style="zoom:50%;" />
 
 - p4-ghostbusters:  在本项目中，您将设计使用传感器来定位和吃掉看不见的幽灵的 Pacman (HMM隐马尔可夫模型)
 
@@ -87,3 +101,23 @@
      <img src="https://p.ipic.vip/kwnuo4.png" style="max-width:80%;" />
 
 - p5-machinelearning:   在此项目中，您将构建一个神经网络来对数字图片进行分类。
+
+   - Perceptron 感知机
+
+      $weights←weights+direction⋅multiplier$
+
+      ```python
+      while True:
+          errorNum = 0
+          for x, y in dataset.iterate_once(1):
+              if nn.as_scalar(y) != self.get_prediction(x): 
+                  errorNum += 1
+                  self.w.update(x, nn.as_scalar(y)) # 更新权重
+          # convergence 训练结束
+          if errorNum == 0:
+              break
+      ```
+
+   - Non-linear Regression
+
+   - 
