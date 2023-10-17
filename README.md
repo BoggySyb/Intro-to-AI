@@ -106,18 +106,17 @@
 
       $weights←weights+direction⋅multiplier$
 
-      ```python
-      while True:
-          errorNum = 0
-          for x, y in dataset.iterate_once(1):
-              if nn.as_scalar(y) != self.get_prediction(x): 
-                  errorNum += 1
-                  self.w.update(x, nn.as_scalar(y)) # 更新权重
-          # convergence 训练结束
-          if errorNum == 0:
-              break
-      ```
+      ![](https://p.ipic.vip/w9ave4.png)
+      
+   - Non-linear Regression 非线性回归 $sin(x)$ 函数
+   
+      $f(x)=relu(relu(x⋅W1+b1)⋅W2+b2)⋅W3+b3$
+   
+      ![](https://p.ipic.vip/w1hvp5.png)
+   
+   - Neural Network 数字图像 0-9 识别
+   
+      ![](https://p.ipic.vip/3lp8e7.png)
 
-   - Non-linear Regression
+   - RNN 循环神经网络 语言识别
 
-   - 
