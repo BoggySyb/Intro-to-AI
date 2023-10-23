@@ -18,7 +18,7 @@
 
    + Depth First Search 深度优先搜索
 
-     <img src="https://p.ipic.vip/be9s2a.png" style="max-width:50%;" />
+     ![](https://p.ipic.vip/be9s2a.png)
 
    + Breadth First Search 宽度优先搜索
 
