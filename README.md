@@ -14,6 +14,8 @@
 
 #### 项目介绍：
 
+![](https://p.ipic.vip/j899wx.jpg)
+
 - p1-search:   在本项目中，您将实现通用搜索算法并将其应用于 Pacman 场景，让 Pacman 在迷宫世界中找到到达特定位置的路径以收集食物。（q7  2/4）
 
    + Depth First Search 深度优先搜索
