@@ -149,7 +149,7 @@
 + Neural Network 数字图像 0-9 识别
 
 <p align="center">
- 	<img src="https://p.ipic.vip/3lp8e7.png" style="max-width:60%;" />
+ 	<img src="https://p.ipic.vip/3lp8e7.png" style="max-width:30%;" />
 </p>
 
 + RNN 循环神经网络 语言识别
