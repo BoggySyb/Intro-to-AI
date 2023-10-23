@@ -18,7 +18,7 @@
 
    + Depth First Search 深度优先搜索
 
-     ![](https://p.ipic.vip/be9s2a.png)
+     ![](https://p.ipic.vip/ypbl8t.jpg)
 
    + Breadth First Search 宽度优先搜索
 
