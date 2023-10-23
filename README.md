@@ -70,8 +70,6 @@
 
   ​	Value Iteration 算法的主要目标是计算每个状态的价值函数，即从每个状态开始执行最佳策略所能获得的期望累积奖励。这个过程通常通过反复迭代来实现，直到价值函数收敛为止。
 
-  <img src="https://p.ipic.vip/j8lmtz.png" style="zoom:50%;" />
-
   <img src="https://p.ipic.vip/73ed7n.png" style="zoom:50%;" />
 
 + Q-Learning
@@ -110,13 +108,9 @@
 
 - Perceptron 感知机
 
-   $weights←weights+direction⋅multiplier$
-
    ![](https://p.ipic.vip/w9ave4.png)
-   
-- Non-linear Regression 非线性回归 $sin(x)$ 函数
 
-   $f(x)=relu(relu(x⋅W1+b1)⋅W2+b2)⋅W3+b3$
+- Non-linear Regression 非线性回归 $sin(x)$ 函数
 
    ![](https://p.ipic.vip/w1hvp5.png)
 
