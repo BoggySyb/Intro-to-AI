@@ -106,17 +106,17 @@
 
 ###### p5-machinelearning:   在此项目中，您将构建一个神经网络来对数字图片进行分类。
 
-- Perceptron 感知机
++ Perceptron 感知机
 
-   ![](https://p.ipic.vip/w9ave4.png)
+![](https://p.ipic.vip/w9ave4.png)
 
-- Non-linear Regression 非线性回归 $sin(x)$ 函数
++ Non-linear Regression 非线性回归 $sin(x)$ 函数
 
-   ![](https://p.ipic.vip/w1hvp5.png)
+![](https://p.ipic.vip/w1hvp5.png)
 
-- Neural Network 数字图像 0-9 识别
++ Neural Network 数字图像 0-9 识别
 
-   ![](https://p.ipic.vip/3lp8e7.png)
+![](https://p.ipic.vip/3lp8e7.png)
 
-- RNN 循环神经网络 语言识别
++ RNN 循环神经网络 语言识别
 
