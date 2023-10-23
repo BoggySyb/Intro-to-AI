@@ -14,31 +14,29 @@
 
 #### 项目介绍：
 
-![](https://p.ipic.vip/kxph45.jpg)
-
 - p1-search:   在本项目中，您将实现通用搜索算法并将其应用于 Pacman 场景，让 Pacman 在迷宫世界中找到到达特定位置的路径以收集食物。（q7  2/4）
 
-   + Depth First Search 深度优先搜索
+   1、Depth First Search 深度优先搜索
 
-     
+   ![](https://p.ipic.vip/kxph45.jpg)
 
-   + Breadth First Search 宽度优先搜索
+   2、Breadth First Search 宽度优先搜索
 
-     <img src="https://p.ipic.vip/vbrlr9.png" style="max-width:50%;" />
+   <img src="https://p.ipic.vip/vbrlr9.png" style="max-width:50%;" />
 
-   + Uniform Cost Search 统一成本搜索
+   3、Uniform Cost Search 统一成本搜索
 
-     ​	UCS 的基本思想是从起始节点开始，不断扩展当前成本最低的节点，直到达到目标节点或搜索空间中没有更多节点可供扩展。
+   ​	UCS 的基本思想是从起始节点开始，不断扩展当前成本最低的节点，直到达到目标节点或搜索空间中没有更多节点可供扩展。
 
-     <img src="https://p.ipic.vip/29xb2o.png" style="zoom:50%;" />
+   <img src="https://p.ipic.vip/29xb2o.png" style="zoom:50%;" />
 
-   + A* Search & Heuristic 启发式方法
+   4、A* Search & Heuristic 启发式方法
 
-     ​	A*搜索算法是一种常用于寻找最短路径或最优解的启发式搜索算法，路径的实际成本（已经花费的代价）和预估的剩余成本（从当前节点到目标节点的估计代价)。
+   ​	A*搜索算法是一种常用于寻找最短路径或最优解的启发式搜索算法，路径的实际成本（已经花费的代价）和预估的剩余成本（从当前节点到目标节点的估计代价)。
 
-     <img src="https://p.ipic.vip/17duvv.png" style="zoom:75%;" />
+   <img src="https://p.ipic.vip/17duvv.png" style="zoom:75%;" />
 
-     
+   
 
 - p2-multiagent:   在本项目中，您将实现极小极大和期望极大搜索算法，以及设计评估函数，来为游戏设计更聪明的幽灵与 Pacman。(q5  0/6)
 
