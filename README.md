@@ -2,7 +2,7 @@
 
 > 仅用作记录个人学习课程，课程介绍如下
 
-![](https://p.ipic.vip/yrr3fk.png)
+![](https://p.ipic.vip/afu5vw.png)
 
 ## UC Berkeley **CS 188** | Introduction to Artificial Intelligence
 
@@ -12,15 +12,13 @@
 
 ​	人工智能导论。主要介绍智能系统设计的基本思想和技术，统计和决策理论建模方法相关的内容。 [课程链接](https://inst.eecs.berkeley.edu/~cs188/fa18/)
 
-![](https://p.ipic.vip/9k2t7x.jpg)
-
 #### 项目介绍：
 
 - p1-search:   在本项目中，您将实现通用搜索算法并将其应用于 Pacman 场景，让 Pacman 在迷宫世界中找到到达特定位置的路径以收集食物。（q7  2/4）
 
    + Depth First Search 深度优先搜索
 
-     ![](https://p.ipic.vip/ypbl8t.jpg)
+     ![](https://p.ipic.vip/aclmro.jpg)
 
    + Breadth First Search 宽度优先搜索
 
