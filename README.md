@@ -18,11 +18,15 @@
 
 + Depth First Search 深度优先搜索
 
-<img src="https://p.ipic.vip/kxph45.jpg" style="zoom:50%;" />
+<p align="center">
+  <img src="https://p.ipic.vip/kxph45.jpg" style="zoom:50%;" />
+</p>
 
 + Breadth First Search 宽度优先搜索
 
-<img src="https://p.ipic.vip/vbrlr9.png" style="max-width:50%;" />
+  <p align="center">
+    <img src="https://p.ipic.vip/vbrlr9.png" style="max-width:50%;" />
+  </p>
 
 + Uniform Cost Search 统一成本搜索
 
