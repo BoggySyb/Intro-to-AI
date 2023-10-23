@@ -18,7 +18,7 @@ p1-search:   在本项目中，您将实现通用搜索算法并将其应用于 
 
 + Depth First Search 深度优先搜索
 
-<img src="https://p.ipic.vip/kxph45.jpg" alt="Image description">
+<img src="https://p.ipic.vip/kxph45.jpg" style="zoom:50%;" />
 
 + Breadth First Search 宽度优先搜索
 
