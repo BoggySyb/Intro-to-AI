@@ -10,11 +10,9 @@
 
 ​	人工智能导论。主要介绍智能系统设计的基本思想和技术，统计和决策理论建模方法相关的内容。 [课程链接](https://inst.eecs.berkeley.edu/~cs188/fa18/)
 
-------
-
 #### 项目介绍：
 
-###### p1-search:   在本项目中，您将实现通用搜索算法并将其应用于 Pacman 场景，让 Pacman 在迷宫世界中找到到达特定位置的路径以收集食物。（q7  2/4）
+##### p1-search:   在本项目中，您将实现通用搜索算法并将其应用于 Pacman 场景，让 Pacman 在迷宫世界中找到到达特定位置的路径以收集食物。（q7  2/4）
 
 + Depth First Search 深度优先搜索
 
@@ -30,7 +28,7 @@
 
 + Uniform Cost Search 统一成本搜索
 
-​	UCS 的基本思想是从起始节点开始，不断扩展当前成本最低的节点，直到达到目标节点或搜索空间中没有更多节点可供扩展。
+​		UCS 的基本思想是从起始节点开始，不断扩展当前成本最低的节点，直到达到目标节点或搜索空间中没有更多节点可供扩展。
 
 <p align="center">
   <img src="https://p.ipic.vip/29xb2o.png" style="zoom:50%;" />
@@ -38,7 +36,7 @@
 
 + A* Search & Heuristic 启发式方法
 
-​	A*搜索算法是一种常用于寻找最短路径或最优解的启发式搜索算法，路径的实际成本（已经花费的代价）和预估的剩余成本（从当前节点到目标节点的估计代价)。
+​		A*搜索算法是一种常用于寻找最短路径或最优解的启发式搜索算法，路径的实际成本（已经花费的代价）和预估的剩余成本（从当前节点到目标节点的估计代价)。
 
 <p align="center">
   <img src="https://p.ipic.vip/17duvv.png" style="zoom:75%;" />
@@ -46,7 +44,7 @@
 
 ------
 
-###### p2-multiagent:   在本项目中，您将实现极小极大和期望极大搜索算法，以及设计评估函数，来为游戏设计更聪明的幽灵与 Pacman。(q5  0/6)
+##### p2-multiagent:   在本项目中，您将实现极小极大和期望极大搜索算法，以及设计评估函数，来为游戏设计更聪明的幽灵与 Pacman。(q5  0/6)
 
 + Reflex Agent  3/4
 
@@ -80,14 +78,14 @@
 
 ------
 
-###### p3-reinforcement:  在本项目中，您将实现价值迭代和 Q 学习。首先在 Gridworld 上测试您的特工，然后将它们应用于模拟机器人控制器（Crawler）和 Pacman。
+##### p3-reinforcement:  在本项目中，您将实现价值迭代和 Q 学习。首先在 Gridworld 上测试您的特工，然后将它们应用于模拟机器人控制器（Crawler）和 Pacman。
 
 + Value Iteration & Asynchronous Value Iteration  价值迭代
 
   ​	Value Iteration 算法的主要目标是计算每个状态的价值函数，即从每个状态开始执行最佳策略所能获得的期望累积奖励。这个过程通常通过反复迭代来实现，直到价值函数收敛为止。
 
   <p align="center">
- 	<img src="https://p.ipic.vip/73ed7n.png" style="zoom:50%;" />
+    <img src="https://p.ipic.vip/73ed7n.png" style="zoom:50%;" />
   </p>
 
 + Q-Learning
@@ -104,7 +102,7 @@
 
 ------
 
-###### p4-ghostbusters:  在本项目中，您将设计使用传感器来定位和吃掉看不见的幽灵的 Pacman (HMM隐马尔可夫模型)
+##### p4-ghostbusters:  在本项目中，您将设计使用传感器来定位和吃掉看不见的幽灵的 Pacman (HMM隐马尔可夫模型)
 
 - Exact Inference 精确推断
 
@@ -132,7 +130,7 @@
 
 ------
 
-###### p5-machinelearning:   在此项目中，您将构建一个神经网络来对数字图片进行分类。
+##### p5-machinelearning:   在此项目中，您将构建一个神经网络来对数字图片进行分类。
 
 + Perceptron 感知机
 
@@ -146,7 +144,7 @@
  	<img src="https://p.ipic.vip/w1hvp5.png" style="max-width:80%;" />
 </p>
 
-+ Neural Network 数字图像 0-9 识别
++ MLP 多层感知机 数字图像 0-9 识别
 
 <p align="center">
  	<img src="https://p.ipic.vip/3lp8e7.png" style="max-width:30%;" />
