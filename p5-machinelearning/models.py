@@ -216,6 +216,11 @@ class LanguageIDModel(object):
 
         # Initialize your model parameters here
         "*** YOUR CODE HERE ***"
+        self.lr, self.num_epochs, self.batch_size = 0.1, 30, 128
+        self.num_hiddens = 512
+        self.weights = [nn.Parameter(self.num_chars, self.num_hiddens), nn.Parameter(1, self.num_hiddens),
+                        nn.Parameter(self.num_hiddens, self.num_hiddens),
+                        nn.Parameter(self.num_hiddens, 5), nn.Parameter(1, 5)]
 
     def run(self, xs):
         """
@@ -247,6 +252,13 @@ class LanguageIDModel(object):
                 (also called logits)
         """
         "*** YOUR CODE HERE ***"
+        state = nn.ReLU(nn.AddBias(nn.Linear(xs[0], self.weights[0]), self.weights[1]))
+        for x in xs[1:]:
+            state = nn.AddBias(nn.Add(nn.Linear(x, self.weights[0]),
+                              nn.Linear(state, self.weights[2])), self.weights[1])
+            state = nn.ReLU(state)
+        return nn.AddBias(nn.Linear(state, self.weights[3]), self.weights[4])
+
         
 
     def get_loss(self, xs, y):
@@ -264,9 +276,17 @@ class LanguageIDModel(object):
         Returns: a loss node
         """
         "*** YOUR CODE HERE ***"
+        return nn.SoftmaxLoss(self.run(xs), y)
+
 
     def train(self, dataset):
         """
         Trains the model.
         """
         "*** YOUR CODE HERE ***"
+        for i in range(self.num_epochs):
+            for xs, y in dataset.iterate_once(self.batch_size):
+                loss = self.get_loss(xs, y)
+                gradients = nn.gradients(loss, self.weights)
+                for param, gradient in zip(self.weights, gradients):
+                    param.update(gradient, -self.lr)
