@@ -152,4 +152,4 @@
 
 + RNN 循环神经网络 语言识别
 
-![image-20231102152227590](https://p.ipic.vip/4j0w1r.png)
+<img src="https://p.ipic.vip/4j0w1r.png" alt="image-20231102152227590" style="zoom:67%;" />
