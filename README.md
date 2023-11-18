@@ -17,8 +17,9 @@
 + Depth First Search 深度优先搜索
 
 <p align="center">
-  <img src="https://p.ipic.vip/kxph45.jpg" style="zoom:50%;" />
+  <img src="./imgs/dfs.jpg" style="zoom:50%;" />
 </p>
+
 
 + Breadth First Search 宽度优先搜索
 
